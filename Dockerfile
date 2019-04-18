@@ -1,15 +1,8 @@
 FROM sensu/sensu:5.5.0
 
-RUN apk add ruby ruby-dev
+RUN apk add \
+  ruby \
+  ruby-dev \
+  curl
 
-RUN wget -O /opt/master.zip https://github.com/sensu-plugins/sensu-plugins-kubernetes/archive/master.zip
-
-WORKDIR /opt
-
-RUN unzip *.zip
-
-WORKDIR /opt/sensu-plugins-kubernetes-master
-
-RUN gem build sensu-plugins-kubernetes
-
-RUN gem install sensu-plugins-kubernetes
+RUN curl -s https://packagecloud.io/install/repositories/sensu/community/script.gem.sh | bash
