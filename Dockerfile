@@ -6,7 +6,8 @@ RUN apk add \
   curl \
   bash \
   make \
-  gcc
+  gcc \
+  libc-dev
 
 RUN curl -s https://packagecloud.io/install/repositories/sensu/community/script.gem.sh | bash
 
