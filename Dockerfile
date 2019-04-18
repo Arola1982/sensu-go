@@ -4,7 +4,8 @@ RUN apk add \
   ruby \
   ruby-dev \
   curl \
-  bash
+  bash \
+  make
 
 RUN curl -s https://packagecloud.io/install/repositories/sensu/community/script.gem.sh | bash
 
