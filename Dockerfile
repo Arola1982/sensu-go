@@ -8,4 +8,4 @@ RUN apk add \
 
 RUN curl -s https://packagecloud.io/install/repositories/sensu/community/script.gem.sh | bash
 
-RUN gem install sensu-install
+RUN gem install sensu-plugins-kubernetes
