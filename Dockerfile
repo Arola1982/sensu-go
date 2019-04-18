@@ -10,5 +10,6 @@ RUN unzip *.zip
 
 WORKDIR /opt/sensu-plugins-kubernetes-master
 
-RUN gem build sensu-plugins-kubernetes && \
-  gem install sensu-plugins-kubernetes
+RUN gem build sensu-plugins-kubernetes
+
+RUN gem install sensu-plugins-kubernetes
