@@ -16,7 +16,7 @@ RUN curl -s https://packagecloud.io/install/repositories/sensu/community/script.
 
 # Download sensu-email-handler
 RUN mkdir /tmp/download && \
-  curl -o /tmp/download/sensu-email-handler_0.1.0_linux_amd64.tar.gz https://github.com/sensu/sensu-email-handler/releases/download/0.1.0/sensu-email-handler_0.1.0_linux_amd64.tar.gz && \
+  wget -O /tmp/download/sensu-email-handler_0.1.0_linux_amd64.tar.gz https://github.com/sensu/sensu-email-handler/releases/download/0.1.0/sensu-email-handler_0.1.0_linux_amd64.tar.gz && \
   cd /tmp/download && \
   tar -xvzf sensu-email-handler_0.1.0_linux_amd64.tar.gz && \
   mv bin/* /usr/bin/ && \
