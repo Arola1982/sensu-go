@@ -9,13 +9,18 @@ RUN apk add \
   make \
   gcc \
   libc-dev \
-  g++ \
-  jq \
-  openssl
+  g++
 
-COPY check_kubernetes.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/check_kubernetes.sh
-
+# Add community plugins repo to be able to install plugins using gem
 RUN curl -s https://packagecloud.io/install/repositories/sensu/community/script.gem.sh | bash
+
+# Download sensu-email-handler
+RUN mkdir /tmp/download && \
+  curl -o /tmp/download/sensu-email-handler_0.1.0_linux_amd64.tar.gz https://github.com/sensu/sensu-email-handler/releases/download/0.1.0/sensu-email-handler_0.1.0_linux_amd64.tar.gz && \
+  cd /tmp/download && \
+  tar -xvzf sensu-email-handler_0.1.0_linux_amd64.tar.gz && \
+  mv bin/* /usr/bin/ && \
+  cd /tmp && \
+  rm -rf download
 
 RUN gem install sensu-plugins-kubernetes
