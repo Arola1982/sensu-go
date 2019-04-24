@@ -9,7 +9,9 @@ RUN apk add \
   make \
   gcc \
   libc-dev \
-  g++
+  g++ \
+  jq \
+  openssl
 
 RUN curl -s https://packagecloud.io/install/repositories/sensu/community/script.gem.sh | bash
 
