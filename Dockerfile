@@ -13,6 +13,9 @@ RUN apk add \
   jq \
   openssl
 
+COPY check_kubernetes.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/check_kubernetes.sh
+
 RUN curl -s https://packagecloud.io/install/repositories/sensu/community/script.gem.sh | bash
 
 RUN gem install sensu-plugins-kubernetes
