@@ -25,5 +25,6 @@ RUN mkdir /tmp/download && \
   cd /tmp && \
   rm -rf download
 
+# Include plugins
 RUN gem install sensu-plugins-kubernetes && \
   gem install sensu-plugins-http
