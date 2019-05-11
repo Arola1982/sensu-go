@@ -1,5 +1,7 @@
 FROM sensu/sensu:5.5.0
 
+MAINTAINER Adam Copley <adam.copley@arola.co.uk>
+
 RUN apk add \
   ruby \
   ruby-rdoc \
