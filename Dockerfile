@@ -1,4 +1,5 @@
-FROM sensu/sensu:5.5.0
+ARG IMAGE_SOURCE_TAG=latest
+FROM sensu/sensu:$IMAGE_SOURCE_TAG
 
 MAINTAINER Adam Copley <adam.copley@arola.co.uk>
 
