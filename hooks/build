@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-SOURCE_TAG="latest"
+SOURCE_TAG="5.9.0"
 
 docker build --build-arg IMAGE_SOURCE_TAG=${SOURCE_TAG} -t arola1982/sensu-go:${SOURCE_TAG} .
