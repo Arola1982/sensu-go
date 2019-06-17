@@ -15,7 +15,8 @@ RUN apk add \
   g++ \
   libxml2-dev \
   zlib-dev \
-  sed
+  sed \
+  jq
 
 # Add community plugins repo to be able to install plugins using gem
 RUN curl -s https://packagecloud.io/install/repositories/sensu/community/script.gem.sh | bash
