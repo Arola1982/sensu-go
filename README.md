@@ -6,6 +6,7 @@ Plugins installed are:
 
 - Kubernetes (Allowing monitoring of cluster resources, pods, services, nodes etc)
 - http
+- aws
 
 Handlers installed are:
 
