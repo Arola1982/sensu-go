@@ -3,7 +3,7 @@ FROM sensu/sensu:$IMAGE_SOURCE_TAG
 
 MAINTAINER Adam Copley <adam.copley@arola.co.uk>
 
-RUN apk add \
+RUN apk add --no-cache \
   ruby \
   ruby-rdoc \
   ruby-dev \
