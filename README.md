@@ -11,3 +11,7 @@ Plugins installed are:
 Handlers installed are:
 
 - Email
+- XMPP
+- RocketChat
+- Microsoft Teams
+- HipChat

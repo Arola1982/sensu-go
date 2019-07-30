@@ -1,5 +1,4 @@
-ARG IMAGE_SOURCE_TAG=latest
-FROM sensu/sensu:$IMAGE_SOURCE_TAG
+FROM sensu/sensu:5.11.1
 
 MAINTAINER Adam Copley <adam.copley@arola.co.uk>
 
@@ -32,6 +31,10 @@ RUN mkdir /tmp/download && \
   rm -rf download
 
 # Include plugins
-RUN gem install sensu-plugins-kubernetes && \
-  gem install sensu-plugins-http && \
-  gem install sensu-plugins-aws
+RUN gem install sensu-plugins-kubernetes
+RUN gem install sensu-plugins-http
+RUN gem install sensu-plugins-aws
+RUN gem install sensu-plugins-xmpp
+RUN gem install sensu-plugins-rocket-chat
+RUN gem install sensu-plugins-microsoft-teams
+RUN gem install sensu-plugins-hipchat
