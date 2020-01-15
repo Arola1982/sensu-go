@@ -1,4 +1,4 @@
-FROM sensu/sensu:5.13.2
+FROM sensu/sensu:5.14.1
 
 MAINTAINER Adam Copley <adam.copley@arola.co.uk>
 
@@ -30,12 +30,19 @@ RUN mkdir /tmp/download && \
   cd /tmp && \
   rm -rf download
 
+# Download kubectl for interacting with AWS
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && \
+  chmod +x kubectl && \
+  mv kubectl /usr/local/bin/kubectl
+
 # Include dependencies
 RUN gem install bigdecimal
+RUN gem install aws-sdk-sso
 
 # Include plugins
 RUN gem install sensu-plugins-kubernetes
 RUN gem install sensu-plugins-http
+RUN gem install sensu-plugins-network-checks
 RUN gem install sensu-plugins-aws
 RUN gem install sensu-plugins-xmpp
 RUN gem install sensu-plugins-rocket-chat
