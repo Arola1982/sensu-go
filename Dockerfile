@@ -1,4 +1,4 @@
-FROM sensu/sensu:5.14.1
+FROM sensu/sensu:5.16.1
 
 MAINTAINER Adam Copley <adam.copley@arola.co.uk>
 
